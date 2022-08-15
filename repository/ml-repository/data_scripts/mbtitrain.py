@@ -29,7 +29,7 @@ def evaluate(y_test,y_pred):
 
 def train():
     df = read_csv(DATA_PATH+'mbti_1.csv')
-    X_train,X_test,y_train,y_test = prepare(df)
+    X,y,X_train,X_test,y_train,y_test = prepare(df)
     filename = MODEL_PATH + 'finalized_model.sav'
     loaded_model = pickle.load(open(filename, 'rb'))
     y_pred = loaded_model.predict(X_test)
