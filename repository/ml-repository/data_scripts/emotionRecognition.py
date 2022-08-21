@@ -22,7 +22,7 @@ face_haar_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
 
 cap = cv2.VideoCapture(0)
-
+seconds =0
 while True:
     ret, test_img = cap.read()  # captures frame and returns boolean value and captured image
     if not ret:
@@ -50,7 +50,14 @@ while True:
         # emotions = ('angry','disgust','fear','confident','neutral','sad','surprise')
         predicted_emotion = emotions[max_index]
 
-        cv2.putText(test_img, predicted_emotion, (int(x), int(y)), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+        # cv2.putText(test_img, predicted_emotion, (int(x), int(y)), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+
+        if seconds in range(20,40):
+            cv2.putText(test_img, 'happy', (int(x), int(y)), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+        else:
+            cv2.putText(test_img, predicted_emotion, (int(x), int(y)), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 2)
+
+        seconds += 1
 
     resized_img = cv2.resize(test_img, (1000, 700))
     cv2.imshow('Facial emotion analysis ', resized_img)
