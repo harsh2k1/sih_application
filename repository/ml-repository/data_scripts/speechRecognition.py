@@ -3,78 +3,42 @@ import speech_recognition as sr
 import os 
 from pydub import AudioSegment
 from pydub.silence import split_on_silence
-
-# # create a speech recognition object
-# r = sr.Recognizer()
-
-# # a function that splits the audio file into chunks
-# # and applies speech recognition
-# def get_large_audio_transcription(path):
-#     """
-#     Splitting the large audio file into chunks
-#     and apply speech recognition on each of these chunks
-#     """
-#     # open the audio file using pydub
-#     sound = AudioSegment.from_wav(path)  
-#     # split audio sound where silence is 700 miliseconds or more and get chunks
-#     chunks = split_on_silence(sound,
-#         # experiment with this value for your target audio file
-#         min_silence_len = 500,
-#         # adjust this per requirement
-#         silence_thresh = sound.dBFS-14,
-#         # keep the silence for 1 second, adjustable as well
-#         keep_silence=500,
-#     )
-#     folder_name = "audio-chunks"
-#     # create a directory to store the audio chunks
-#     if not os.path.isdir(folder_name):
-#         os.mkdir(folder_name)
-#     whole_text = ""
-#     # process each chunk 
-#     for i, audio_chunk in enumerate(chunks, start=1):
-#         # export audio chunk and save it in
-#         # the `folder_name` directory.
-#         chunk_filename = os.path.join(folder_name, f"chunk{i}.wav")
-#         audio_chunk.export(chunk_filename, format="wav")
-#         # recognize the chunk
-#         with sr.AudioFile(chunk_filename) as source:
-#             audio_listened = r.record(source)
-#             # try converting it to text
-#             try:
-#                 text = r.recognize_google(audio_listened)
-#             except sr.UnknownValueError as e:
-#                 print("Error:", str(e))
-#             else:
-#                 text = f"{text.capitalize()}. "
-#                 print(chunk_filename, ":", text)
-#                 whole_text += text
-#     # return the text for all chunks detected
-#     return whole_text
-
-
-# # path = "7601-291468-0006.wav"
-# import sys
-# sys.path.append('../')
-# from config import DATA_PATH
-# path = DATA_PATH+'sample_track.wav'
-# print("\nFull text:", get_large_audio_transcription(path))
-# os.remove('audio-chunks')
-
-# Python program to translate
-# speech to text and text to speech
-
-
-# Python program to translate
-# speech to text and text to speech
-
-
 import speech_recognition as sr
 import pyttsx3
+import nltk
+nltk.download('vader_lexicon')
+import re
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+import string
+from nltk.stem import PorterStemmer
+from nltk.stem import WordNetLemmatizer
+import spacy
 
 r = sr.Recognizer()
 
-# Python program to translate
-# speech to text and text to speech
+lemmatizer = WordNetLemmatizer()
+stopwords_english = stopwords.words('english')
+
+def clean_data(text):
+    text_clean = []
+    text_tokens = word_tokenize(text)
+    
+    for word in text_tokens:
+        if (word not in stopwords_english and # remove stopwords              
+                word not in string.punctuation): # remove punctuation            
+            stem_word = lemmatizer.lemmatize(word) # stemming word
+            text_clean.append(stem_word)
+    
+    list_to_str = ' '.join([str(ele) for ele in text_clean])
+    return list_to_str.lower()
+
+def get_vader_sentiment(review): 
+    sia = SentimentIntensityAnalyzer()
+    sia = SentimentIntensityAnalyzer()
+    analysis = sia.polarity_scores(review)
+    return analysis['compound']
 
 
 import speech_recognition as sr
@@ -82,7 +46,11 @@ import pyttsx3
 
 # Initialize the recognizer
 r = sr.Recognizer()
+import time
 
+t_end = time.time() + 15  # 15 secs
+
+    # do whatever you do
 # Function to convert text to
 # speech
 def SpeakText(command):
@@ -96,8 +64,15 @@ def SpeakText(command):
 # Loop infinitely for user to
 # speak
 
-# while(True):
-# 	try:
-#         with sr.Microphone
-#     finally:
-#         break
+while time.time() < t_end:
+    try:
+        with sr.Microphone() as source2:
+            r.adjust_for_ambient_noise(source2,duration=0.2)
+            audio2 = r.listen(source2)
+            myText = r.recognize_google(audio2)
+            print('Output Text: ', myText)
+            cleanText= clean_data(myText)
+            compound_score = get_vader_sentiment(cleanText)
+            print('Compound Score: ', compound_score)
+    except:
+        break

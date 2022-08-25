@@ -24,17 +24,18 @@
     3. then lets say 1 user se 10 ques puche hai to un 10 ques k scores (1d array) 0-5 k beech me, and unki predict-proba, dono pass krne h algorithm() me
 '''
 
-import speech_recognition as sr
 import sys
+
+
+import pandas as pd
 sys.path.append('../')
 from config import DATA_PATH
-# initialize the recognizer
-r = sr.Recognizer()
-# open the file
-filename = DATA_PATH+'output10.wav'
-with sr.AudioFile(filename) as source:
-    # listen for the data (load audio to memory)
-    audio_data = r.record(source)
-    # recognize (convert from speech to text)
-    text = r.recognize_google(audio_data)
-    print(text)
+df = pd.read_excel(DATA_PATH+'demo questions.xlsx')
+questions = df.posts
+print(questions)
+
+questions.to_json(DATA_PATH+'demo_fe_final_questions.json')
+
+# import json
+# json.dumps(list(questions.values))
+# print(questions)
