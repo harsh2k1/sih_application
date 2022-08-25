@@ -4,395 +4,398 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aptitude Assessment</title>
-    <link rel="stylesheet" href="../static/css/aptitude_style.css">
+    <title>Personality Assessment</title>
+    <!-- <link rel="stylesheet" href="../static/css/personality.css"> -->
     <!-- FontAweome CDN Link for Icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     <!-- favicon -->
     <link rel="shortcut icon" href="../static/img/logo.png" type="image/x-icon">
-<style>/* importing google fonts */
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-    }
-    
-    body{
-        background: #007bff;
-    }
-    
-    ::selection{
-        color: #fff;
-        background: #007bff;
-    }
-    
-    .start_btn,
-    .info_box,
-    .quiz_box,
-    .result_box{
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
-                    0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    }
-    
-    .info_box.activeInfo,
-    .quiz_box.activeQuiz,
-    .result_box.activeResult{
-        opacity: 1;
-        z-index: 5;
-        pointer-events: auto;
-        transform: translate(-50%, -50%) scale(1);
-    }
-    
-    .start_btn button{
-        font-size: 25px;
-        font-weight: 500;
-        color: #007bff;
-        padding: 15px 30px;
-        outline: none;
-        border: none;
-        border-radius: 5px;
-        background: #fff;
-        cursor: pointer;
-    }
-    
-    .info_box{
-        width: 540px;
-        background: #fff;
-        border-radius: 5px;
-        transform: translate(-50%, -50%) scale(0.9);
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.3s ease;
-    }
-    
-    .info_box .info-title{
-        height: 60px;
-        width: 100%;
-        border-bottom: 1px solid lightgrey;
-        display: flex;
-        align-items: center;
-        padding: 0 30px;
-        border-radius: 5px 5px 0 0;
-        font-size: 20px;
-        font-weight: 600;
-    }
-    
-    .info_box .info-list{
-        padding: 15px 30px;
-    }
-    
-    .info_box .info-list .info{
-        margin: 5px 0;
-        font-size: 17px;
-    }
-    
-    .info_box .info-list .info span{
-        font-weight: 600;
-        color: #007bff;
-    }
-    .info_box .buttons{
-        height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        padding: 0 30px;
-        border-top: 1px solid lightgrey;
-    }
-    
-    .info_box .buttons button{
-        margin: 0 5px;
-        height: 40px;
-        width: 100px;
-        font-size: 16px;
-        font-weight: 500;
-        cursor: pointer;
-        border: none;
-        outline: none;
-        border-radius: 5px;
-        border: 1px solid #007bff;
-        transition: all 0.3s ease;
-    }
-    
-    .quiz_box{
-        width: 550px;
-        background: #fff;
-        border-radius: 5px;
-        transform: translate(-50%, -50%) scale(0.9);
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.3s ease;
-    }
-    
-    .quiz_box header{
-        position: relative;
-        z-index: 2;
-        height: 70px;
-        padding: 0 30px;
-        background: #fff;
-        border-radius: 5px 5px 0 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
-    }
-    
-    .quiz_box header .title{
-        font-size: 20px;
-        font-weight: 600;
-    }
-    
-    .quiz_box header .timer{
-        color: #004085;
-        background: #cce5ff;
-        border: 1px solid #b8daff;
-        height: 45px;
-        padding: 0 8px;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 145px;
-    }
-    
-    .quiz_box header .timer .time_left_txt{
-        font-weight: 400;
-        font-size: 17px;
-        user-select: none;
-    }
-    
-    .quiz_box header .timer .timer_sec{
-        font-size: 18px;
-        font-weight: 500;
-        height: 30px;
-        width: 45px;
-        color: #fff;
-        border-radius: 5px;
-        line-height: 30px;
-        text-align: center;
-        background: #343a40;
-        border: 1px solid #343a40;
-        user-select: none;
-    }
-    
-    .quiz_box header .time_line{
-        position: absolute;
-        bottom: 0px;
-        left: 0px;
-        height: 3px;
-        background: #007bff;
-    }
-    
-    section{
-        padding: 25px 30px 20px 30px;
-        background: #fff;
-    }
-    
-    section .que_text{
-        font-size: 25px;
-        font-weight: 600;
-    }
-    
-    section .option_list{
-        padding: 20px 0px;
-        display: block;   
-    }
-    
-    section .option_list .option{
-        background: aliceblue;
-        border: 1px solid #84c5fe;
-        border-radius: 5px;
-        padding: 8px 15px;
-        font-size: 17px;
-        margin-bottom: 15px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    
-    section .option_list .option:last-child{
-        margin-bottom: 0px;
-    }
-    
-    section .option_list .option:hover{
-        color: #004085;
-        background: #cce5ff;
-        border: 1px solid #b8daff;
-    }
-    
-    section .option_list .option.correct{
-        color: #155724;
-        background: #d4edda;
-        border: 1px solid #c3e6cb;
-    }
-    
-    section .option_list .option.incorrect{
-        color: #721c24;
-        background: #f8d7da;
-        border: 1px solid #f5c6cb;
-    }
-    
-    section .option_list .option.disabled{
-        pointer-events: none;
-    }
-    
-    section .option_list .option .icon{
-        height: 26px;
-        width: 26px;
-        border: 2px solid transparent;
-        border-radius: 50%;
-        text-align: center;
-        font-size: 13px;
-        pointer-events: none;
-        transition: all 0.3s ease;
-        line-height: 24px;
-    }
-    .option_list .option .icon.tick{
-        color: #23903c;
-        border-color: #23903c;
-        background: #d4edda;
-    }
-    
-    .option_list .option .icon.cross{
-        color: #a42834;
-        background: #f8d7da;
-        border-color: #a42834;
-    }
-    
-    footer{
-        height: 60px;
-        padding: 0 30px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-top: 1px solid lightgrey;
-    }
-    
-    footer .total_que span{
-        display: flex;
-        user-select: none;
-    }
-    
-    footer .total_que span p{
-        font-weight: 500;
-        padding: 0 5px;
-    }
-    
-    footer .total_que span p:first-child{
-        padding-left: 0px;
-    }
-    
-    footer button{
-        height: 40px;
-        padding: 0 13px;
-        font-size: 18px;
-        font-weight: 400;
-        cursor: pointer;
-        border: none;
-        outline: none;
-        color: #fff;
-        border-radius: 5px;
-        background: #007bff;
-        border: 1px solid #007bff;
-        line-height: 10px;
-        opacity: 0;
-        pointer-events: none;
-        transform: scale(0.95);
-        transition: all 0.3s ease;
-    }
-    
-    footer button:hover{
-        background: #0263ca;
-    }
-    
-    footer button.show{
-        opacity: 1;
-        pointer-events: auto;
-        transform: scale(1);
-    }
-    
-    .result_box{
-        background: #fff;
-        border-radius: 5px;
-        display: flex;
-        padding: 25px 30px;
-        width: 450px;
-        align-items: center;
-        flex-direction: column;
-        justify-content: center;
-        transform: translate(-50%, -50%) scale(0.9);
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.3s ease;
-    }
-    
-    .result_box .icon{
-        font-size: 100px;
-        color: #007bff;
-        margin-bottom: 10px;
-    }
-    
-    .result_box .complete_text{
-        font-size: 20px;
-        font-weight: 500;
-    }
-    
-    .result_box .score_text span{
-        display: flex;
-        margin: 10px 0;
-        font-size: 18px;
-        font-weight: 500;
-    }
-    
-    .result_box .score_text span p{
-        padding: 0 4px;
-        font-weight: 600;
-    }
-    
-    .result_box .buttons{
-        display: flex;
-        margin: 20px 0;
-    }
-    
-    .result_box .buttons button{
-        margin: 0 10px;
-        height: 45px;
-        padding: 0 20px;
-        font-size: 18px;
-        font-weight: 500;
-        cursor: pointer;
-        border: none;
-        outline: none;
-        border-radius: 5px;
-        border: 1px solid #007bff;
-        transition: all 0.3s ease;
-    }
-    
-    .buttons button.restart{
-        color: #fff;
-        background: #007bff;
-    }
-    
-    .buttons button.restart:hover{
-        background: #0263ca;
-    }
-    
-    .buttons button.quit{
-        color: #007bff;
-        background: #fff;
-    }
-    
-    .buttons button.quit:hover{
-        color: #fff;
-        background: #007bff;
-    }</style>
+<style>
+    /* importing google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background: #007bff;
+}
+
+::selection{
+    color: #fff;
+    background: #007bff;
+}
+
+.start_btn,
+.info_box,
+.quiz_box,
+.result_box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.info_box.activeInfo,
+.quiz_box.activeQuiz,
+.result_box.activeResult{
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.start_btn button{
+    font-size: 25px;
+    font-weight: 500;
+    color: #007bff;
+    padding: 15px 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.info_box{
+    width: 540px;
+    background: #fff;
+    border-radius: 5px;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.info_box .info-title{
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    border-radius: 5px 5px 0 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.info_box .info-list{
+    padding: 15px 30px;
+}
+
+.info_box .info-list .info{
+    margin: 5px 0;
+    font-size: 17px;
+}
+
+.info_box .info-list .info span{
+    font-weight: 600;
+    color: #007bff;
+}
+.info_box .buttons{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 30px;
+    border-top: 1px solid lightgrey;
+}
+
+.info_box .buttons button{
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #007bff;
+    transition: all 0.3s ease;
+}
+
+.quiz_box{
+    width: 550px;
+    background: #fff;
+    border-radius: 5px;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.quiz_box header{
+    position: relative;
+    z-index: 2;
+    height: 70px;
+    padding: 0 30px;
+    background: #fff;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
+}
+
+.quiz_box header .title{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.quiz_box header .timer{
+    color: #004085;
+    background: #cce5ff;
+    border: 1px solid #b8daff;
+    height: 45px;
+    padding: 0 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 145px;
+}
+
+.quiz_box header .timer .time_left_txt{
+    font-weight: 400;
+    font-size: 17px;
+    user-select: none;
+}
+
+.quiz_box header .timer .timer_sec{
+    font-size: 18px;
+    font-weight: 500;
+    height: 30px;
+    width: 45px;
+    color: #fff;
+    border-radius: 5px;
+    line-height: 30px;
+    text-align: center;
+    background: #343a40;
+    border: 1px solid #343a40;
+    user-select: none;
+}
+
+.quiz_box header .time_line{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 3px;
+    background: #007bff;
+}
+
+section{
+    padding: 25px 30px 20px 30px;
+    background: #fff;
+}
+
+section .que_text{
+    font-size: 25px;
+    font-weight: 600;
+}
+
+section .option_list{
+    padding: 20px 0px;
+    display: block;   
+}
+
+section .option_list .option{
+    background: aliceblue;
+    border: 1px solid #84c5fe;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 17px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .option_list .option:last-child{
+    margin-bottom: 0px;
+}
+
+section .option_list .option:hover{
+    color: #004085;
+    background: #cce5ff;
+    border: 1px solid #b8daff;
+}
+
+section .option_list .option.correct{
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+section .option_list .option.incorrect{
+    color: #23903c;
+    background: #a6e9b5;
+    border: 1px solid #f5c6cb;
+}
+
+section .option_list .option.disabled{
+    pointer-events: none;
+}
+
+section .option_list .option .icon{
+    height: 26px;
+    width: 26px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 13px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    line-height: 24px;
+    display: none;
+}
+.option_list .option .icon.tick{
+    color: #23903c;
+    border-color: #23903c;
+    background: #d4edda;
+}
+
+.option_list .option .icon.cross{
+    color: #23903c;
+    background: #d4edda;
+    border-color: #23903c;
+}
+
+footer{
+    height: 60px;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid lightgrey;
+}
+
+footer .total_que span{
+    display: flex;
+    user-select: none;
+}
+
+footer .total_que span p{
+    font-weight: 500;
+    padding: 0 5px;
+}
+
+footer .total_que span p:first-child{
+    padding-left: 0px;
+}
+
+footer button{
+    height: 40px;
+    padding: 0 13px;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 5px;
+    background: #007bff;
+    border: 1px solid #007bff;
+    line-height: 10px;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
+    transition: all 0.3s ease;
+}
+
+footer button:hover{
+    background: #0263ca;
+}
+
+footer button.show{
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+.result_box{
+    background: #fff;
+    border-radius: 5px;
+    display: flex;
+    padding: 25px 30px;
+    width: 450px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.result_box .icon{
+    font-size: 100px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.result_box .complete_text{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.result_box .score_text span{
+    display: flex;
+    margin: 10px 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.result_box .score_text span p{
+    padding: 0 4px;
+    font-weight: 600;
+}
+
+.result_box .buttons{
+    display: flex;
+    margin: 20px 0;
+}
+
+.result_box .buttons button{
+    margin: 0 10px;
+    height: 45px;
+    padding: 0 20px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #007bff;
+    transition: all 0.3s ease;
+}
+
+.buttons button.restart{
+    color: #fff;
+    background: #007bff;
+}
+
+.buttons button.restart:hover{
+    background: #0263ca;
+}
+
+.buttons button.quit{
+    color: #007bff;
+    background: #fff;
+}
+
+.buttons button.quit:hover{
+    color: #fff;
+    background: #007bff;
+}
+</style>
 </head>
 <body>
     <!-- start Quiz button -->
@@ -417,7 +420,7 @@
     <!-- Quiz Box -->
     <div class="quiz_box">
         <header>
-            <div class="title">Aptitude Assessment</div>
+            <div class="title">Personality Assessment</div>
             <div class="timer">
                 <div class="time_left_txt">Time Left</div>
                 <div class="timer_sec">15</div>
@@ -458,10 +461,130 @@
     </div>
 
     <!-- Inside this JavaScript file I've inserted Questions and Options only -->
-    <!-- <script src="../static/js/aptitude_Ques.js"></script> -->
+    <!-- <script src="../static/js/personality_Ques.js"></script> -->
 
     <!-- Inside this JavaScript file I've coded all Quiz Codes -->
-    <!-- <script src="../static/js/aptitude_ass.js"></script> -->
+    <!-- <script src="../static/js/personality.js"></script> -->
+<script>
+    // creating an array and passing the number, questions, options, and answers
+let questions = [
+    {
+    numb: 1,
+    question: " I am not really interested in others",
+    answer: " Neutral",
+    options: [
+        "Strongly Disagree",
+      "Disagree",
+      "Neutral",
+      "Agree",
+      "Strongly Agree",
+    ]
+  },
+    {
+    numb: 2,
+    question: "I know how to comfort others ",
+    answer: "strongly Agree",
+    options: [
+        "Strongly Disagree",
+      "Disagree",
+      "Neutral",
+      "Agree",
+      "Strongly Agree",
+    ]
+  },
+    {
+    numb: 3,
+    question: "I feel others' emotions",
+    answer: "Agree",
+    options: [
+        "Strongly Disagree",
+      "Disagree",
+      "Neutral",
+      "Agree",
+      "Strongly Agree",
+    ]
+  },
+    {
+    numb: 4,
+    question: " I take an interest in other people's lives ",
+    answer: " disagree",
+    options: [
+        "Strongly Disagree",
+      "Disagree",
+      "Neutral",
+      "Agree",
+      "Strongly Agree",
+    ]
+  },
+    {
+    numb: 5,
+    question: "I cheer people up ",
+    answer: "strongly agree",
+    options: [
+        "Strongly Disagree",
+      "Disagree",
+      "Neutral",
+      "Agree",
+      "Strongly Agree",
+    ]
+  },
+
+
+  {
+    numb: 6,
+    question: "I make people feel at ease ",
+    answer: "Neutral",
+    options: [
+        "Strongly Disagree",
+      "Disagree",
+      "Neutral",
+      "Agree",
+      "Strongly Agree",
+    ]
+  },
+
+  {
+    numb: 7,
+    question: " I take time out for others ",
+    answer: " Agree",
+    options: [
+        "Strongly Disagree",
+      "Disagree",
+      "Neutral",
+      "Agree",
+      "Strongly Agree",
+    ]
+  },
+
+
+  {
+    numb: 8,
+    question: " I don't like to get involved in other people's problems ",
+    answer: "Neutral",
+    options: [
+        "Strongly Disagree",
+      "Disagree",
+      "Neutral",
+      "Agree",
+      "Strongly Agree",
+    ]
+  },
+
+  {
+    numb: 9,
+    question: "  I am not really interested in others  ",
+    answer: " disagree",
+    options: [
+        "Strongly Disagree",
+      "Disagree",
+      "Neutral",
+      "Agree",
+      "Strongly Agree",
+    ]
+  },
+]
+
+</script>
 <script>
     //selecting all required elements
 const start_btn = document.querySelector(".start_btn button");
@@ -562,7 +685,8 @@ function showQuetions(index){
     let option_tag = '<div class="option"><span>'+ questions[index].options[0] +'</span></div>'
     + '<div class="option"><span>'+ questions[index].options[1] +'</span></div>'
     + '<div class="option"><span>'+ questions[index].options[2] +'</span></div>'
-    + '<div class="option"><span>'+ questions[index].options[3] +'</span></div>';
+    + '<div class="option"><span>'+ questions[index].options[3] +'</span></div>'
+    + '<div class="option"><span>'+ questions[index].options[4] +'</span></div>';
     que_text.innerHTML = que_tag; //adding new span tag inside que_tag
     option_list.innerHTML = option_tag; //adding new div tag inside option_tag
     
@@ -675,129 +799,6 @@ function queCounter(index){
     let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
     bottom_ques_counter.innerHTML = totalQueCounTag;  //adding new span tag inside bottom_ques_counter
 }
-</script>
-
-<script>// creating an array and passing the number, questions, options, and answers
-    let questions = [
-        {
-        numb: 1,
-        question: " The length, expansiveness and tallness of a cuboid are in the proportion 6:5:4 and its entire surface region is 33300 cm2 . Its volume is: ",
-        answer: " 405000 cm3",
-        options: [
-          " 45000 cm3",
-          " 405000 cm3",
-          " 455000 cm3",
-          "information deficient"
-        ]
-      },
-        {
-        numb: 2,
-        question: "8 men can do a bit of work in 12 days. 4 ladies can do it in 48 days and 10 kids can do it in 24 days. In how long can 10 men, 4 ladies and 10 kids together finish the bit of work? ",
-        answer: "6 days",
-        options: [
-          " 5 days",
-          " 15 days",
-          "28 days",
-          "6 days"
-        ]
-      },
-        {
-        numb: 3,
-        question: "Two no. are in the extent 3/2 :8/3, when each of these are extended by 15 , their extent gets the chance to be 5/3 :5/2 . The greater of the no. is :",
-        answer: "48",
-        options: [
-          "27",
-          "36",
-          "48",
-          "64"
-        ]
-      },
-        {
-        numb: 4,
-        question: " The sum of two numbers is 45 and difference is 1/9 of their sum. What is their L.C.M: ",
-        answer: "100",
-        options: [
-          "100",
-          "150",
-          "200",
-          "250"
-        ]
-      },
-        {
-        numb: 5,
-        question: "1/0.04 = ?",
-        answer: "25",
-        options: [
-          " 1/40",
-          " 2/5 ",
-          "2.5",
-          "25"
-        ]
-      },
-    
-    
-      {
-        numb: 6,
-        question: "The average age of 80 girls was 20 years, the average age of 20 of them was 22 years and that of another 20 was 24 years. Find the average age of the remaining  girls. ",
-        answer: "17",
-        options: [
-          " 17",
-          " 19 ",
-          "21",
-          "15"
-        ]
-      },
-    
-      {
-        numb: 7,
-        question: " A shopkeeper professes to sell all things at a discount of 20% ,but increases selling price of each article by 30% .His gain on each article is ",
-        answer: "4",
-        options: [
-          " 3",
-          " 4",
-          "5",
-          "6"
-        ]
-      },
-    
-    
-      {
-        numb: 8,
-        question: " Choose the pair of words that best completes the sentence: The -------- of the timetable caused some ---------- ",
-        answer: "revision/inconvenience",
-        options: [
-          "  rivision/inconvenience ",
-          " revision/inconvenience",
-          " revission/inconvenience ",
-          " revition/inconvenience  "
-        ]
-      },
-    
-      {
-        numb: 9,
-        question: "  Which of these is the missing word? kick, ______, walk     ",
-        answer: "hand",
-        options: [
-          " throw",
-          " toes",
-          "shin",
-          "hand"
-        ]
-      },
-      // you can uncomment the below codes and make duplicate as more as you want to add question
-      // but remember you need to give the numb value serialize like 1,2,3,5,6,7,8,9.....
-    
-      //   {
-      //   numb: 6,
-      //   question: "Your Question is Here",
-      //   answer: "Correct answer of the question is here",
-      //   options: [
-      //     "Option 1",
-      //     "option 2",
-      //     "option 3",
-      //     "option 4"
-      //   ]
-      // },
-    ];</script>
+    </script>
 </body>
 </html>
