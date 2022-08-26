@@ -6,6 +6,8 @@ from flask import render_template, request
 import sys
 from flask import Flask, render_template, Response
 import cv2
+import pandas as pd
+import json
 import os
 import cv2
 import numpy as np
@@ -149,13 +151,77 @@ def video_feed():
 def video_assessment_test():
     return render_template('video_test.html')
 
-@app.route('/test', methods=['POST'])
+def algorithm(X, probabilities):
+    final = []
+    probs = [[X[i]*probabilities[i][j] for j in range(len(probabilities[i]))] for i in range(len(list(X)))]
+    print(probs[0])
+    for i in range(len(probabilities[0])): # range(16)
+        sum = 0
+        for j in range(len(probs)):
+            sum += probs[j][i] # 00 10 20
+        final.append(sum)
+    return final
+
 def test():
-    uname=request.form['uname']  
-    passwrd=request.form['pass']  
-    if uname=="harsh" and passwrd=="123":  
-        return "Welcome %s" %uname  
-    # return 'Hello'
+    from random import uniform
+    encodings = {8: 'INFJ', 3: 'ENTP', 11: 'INTP', 10: 'INTJ', 2: 'ENTJ', 0: 'ENFJ', 9: 'INFP', 1: 'ENFP', 13: 'ISFP', 15: 'ISTP', 12: 'ISFJ', 14: 'ISTJ', 7: 'ESTP', 5: 'ESFP', 6: 'ESTJ', 4: 'ESFJ'}
+    X = [1, 4, 2, 3, 3,5,0,2,0,4]  # output from user 0-5
+    probabilities = [[uniform(0,1) for j in range(16)] for i in range(len(X))]    # this is len(X)x16 shaped array, isme har single ques k lie 16 predict_proba hai.. meaning jb df['predict_proba'] ban jaega to mje un specific ques k lie list of predict_proba bnani h eg probabilities.append(df[df['question'] == ques-asked-from-user]['predict_proba'])
+    print(np.array(probabilities).shape)
+    final = algorithm(X,probabilities)
+    print(final)
+    final_predicted_output = encodings.get(np.argmax(final))
+    print(final_predicted_output)
+    return final_predicted_output
+
+@app.route('/report')
+def final_results():
+    li1 = ['INTJ','INTP','ENTJ','ENTP','INFJ','INFP','ENFJ','ENFP','ISTJ','ISFJ','ESTJ','ESFJ','ISTP','ISFP','ESTP','ESFP']
+    li2 = ['Architect','Logician','Commander','Debater','Advocate','Mediator','Protagonist','Campaigner','Logistician','Defender','Executives','Consul','Virtuoso','Adventurer','Entepreneur','Entertainer']
+    li2 = [ele.replace(' ','_').lower() for ele in li2]
+    final_predicted_output = test()
+    x = dict(zip(li1,li2))
+    path = x.get(final_predicted_output) + '.html'
+    print(path)
+    return render_template('adventurer.html')
+
+@app.route('/mentorship')
+def mentorship():
+    return render_template('mentorship.html')
+
+@app.route('/professional')
+def professional():
+    return render_template('professional.html')
+
+@app.route('/student')
+def student():
+    return render_template('student.html')
+
+@app.route('/slot-book')
+def slot_book():
+    return render_template('slot_book.html')
+
+@app.route('/test')
+def test():
+    return render_template('test.html')
+
+@app.route('/filter', methods=['POST'])
+def filter():
+    data = pd.read_csv('collegeData.csv', encoding='utf8')
+    data = data[(data['city']==request.form["Country"]) & (data['courseName']==request.form["Region"])]
+    data = data.head(50)
+    data = data.to_dict(orient='records')
+    response = json.dumps(data, indent=2)
+    return response
+
+
+# @app.route('/test', methods=['POST'])
+# def test():
+#     uname=request.form['uname']  
+#     passwrd=request.form['pass']  
+#     if uname=="harsh" and passwrd=="123":  
+#         return "Welcome %s" %uname  
+#     # return 'Hello'
 
 
 if __name__ == "__main__":
