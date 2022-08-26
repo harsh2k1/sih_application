@@ -32,11 +32,24 @@
 
 <body>
 
+  <div id = "google_element"></div>
+  <script src = "http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate">
+    
+  </script>
+
+  <script>
+    function loadGoogleTranslate(){
+      new google.translate.TranslateElement(
+        "google_element"
+      )
+    }
+  </script>
+
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
-      <a href="../templates/index.html" class="logo d-flex align-items-center">
+      <a href="http://127.0.0.1:5000/" class="logo d-flex align-items-center">
         <img src="../static/img/logo.png" alt="logo">
         <span>CareerSpring</span>
       </a>
@@ -45,47 +58,16 @@
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
-
-          <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li> -->
-          <li><a class="nav-link scrollto" href="#pricing">Premium</a></li>
-
-          
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
-
-
-
-
-
-
-          <!-- <li><a href="blog.html">Blog</a></li> -->
-          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul> -->
-
-
-
-
-
-
-
+              <li><a href="http://127.0.0.1:5000/mentorship-book">1:1 Mentorship</a></li>
+              <li><a href="https://www.collegesearch.in/">College Search</a></li>
+              <li><a href="http://127.0.0.1:5000/login">Career Assessment Test</a></li>
+            </ul> 
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <!-- <li><a class="getstarted scrollto" href="../templates/login.html"target="_blank">Login/Register</a></li> -->
           <li><a class="getstarted scrollto" href="http://127.0.0.1:5000/login"target="_blank">Login/Register</a></li>
-          
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -94,7 +76,7 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero d-flex align-items-center">
+  <section id="hero" class="hero d-flex align-items-center" style="height:300px;">
 
     <div class="container">
     
@@ -104,8 +86,7 @@
           <h2 data-aos="fade-up" data-aos-delay="400">We provide an innovative solution to help you  know what is good for you.</h2>
           <div data-aos="fade-up" data-aos-delay="600">
             <div class="text-center text-lg-start">
-              <!-- <a href="../templates/login.html"target="_blank" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center"> -->
-                <a href="http://127.0.0.1:5000/login"target="_blank" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+              <a href="http://127.0.0.1:5000/"target="_blank" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                 <span>Get Started</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
@@ -126,7 +107,7 @@
       
 
       <div class="container" data-aos="fade-up">
-        <header class="section-header">
+        <header class="section-header" style="padding: 5px;">
           <!-- <h2>Features</h2> -->
           <p>What is CareerSpring ?</p>
         </header>
@@ -399,7 +380,7 @@
           <div class="row">
 
             <div class="col-xl-4 text-center" data-aos="fade-right" data-aos-delay="100">
-              <img src="../static/img/assets/img/features-3.png" class="img-fluid p-4" alt="">
+              <img src="../static/img/assets/img/features-3.png" class="img-fluid p-4" alt="" height="400px">
             </div>
 
             <div class="col-xl-8 d-flex content">
@@ -542,23 +523,7 @@
 
         <div class="row gy-4" data-aos="fade-left">
 
-          <!-- <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h3 style="color: #07d5c0;">Free Plan</h3>
-              <div class="price"><sup>$</sup>0<span> / mo</span></div>
-              <img src="assets/img/pricing-free.png" class="img-fluid" alt="">
-              <ul>
-                <li>Instant Withdrawals</li>
-                <li>Verified Coins</li>
-                <li>Exclusive Trade Recommendations</li>
-                <li class="na">Ad Free Experience</li>
-                <li class="na">Get Detailed Insights of your holdings</li>
-                <li class="na">Set Financial Goals</li>
-                <li class="na">Global and Local News, Opinions, Views and Analysis</li>
-              </ul>
-              <a href="#" class="btn-buy">Buy Now</a>
-            </div>
-          </div> -->
+          
 
           <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200" style="margin-left: 300px;">
             <div class="box">
@@ -567,7 +532,7 @@
               /* display: inline-block; */
               padding-left: 30%;">Free Plan</h3>
               <div class="price"><sup>INR</sup>0<span> / mo</span></div>
-              <img src="../static/img/assets/img/pricing-starter.png" class="img-fluid" alt="">
+              <img src="../static/img/assets/img/pricing-starter.png" class="img-fluid" alt="" style="margin-left: 0px;">
               <ul>
                 <li>Free Test for secondary school</li>
                 <li>1:1 Mentorship</li>
@@ -1248,19 +1213,19 @@
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required style="border-radius: 5px;padding: 10px; border-color: rgb(211, 211, 211);">
                 </div>
 
                 <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required  style="border-radius: 5px;padding: 10px; border-color: rgb(211, 211, 211);">
                 </div>
 
                 <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required style="border-radius: 5px;padding: 10px; border-color: rgb(211, 211, 211);">
                 </div>
 
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required ></textarea>
                 </div>
 
                 <div class="col-md-12 text-center">
@@ -1307,7 +1272,7 @@
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-5 col-md-12 footer-info">
-            <a href="../templates/index.html" class="logo d-flex align-items-center">
+            <a href="http://127.0.0.1:5000/" class="logo d-flex align-items-center">
               <img src="../static/img/assets/img/logo.png" alt="">
               <span>CareerSpring</span>
             </a>
@@ -1360,15 +1325,9 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>LooseCoin</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>CareerSpring</span></strong>. All Rights Reserved
       </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-templates/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
+      
     </div>
   </footer><!-- End Footer -->
 
@@ -1382,9 +1341,21 @@
   <script src="../static/css/das_css_vendor/purecounter/purecounter.js"></script>
   <script src="../static/css/das_css_vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="../static/css/das_css_vendor/glightbox/js/glightbox.min.js"></script>
+  <!-- <script src="//www.socialintents.com/api/chat/socialintents.1.3.js#2c9fa6c382cda6250182d6e144ee0c3e" async="async"></script> -->
+  <script src="https://www.socialintents.com/api/socialintents.1.3.js#2c9fa6c382cda6250182d6e144bf0c3b" async="async"></script>
 
   <!-- templates Main JS File -->
-  <script src="../static/js/das_main.js"></script>
+  <!-- <script src="../static/js/das_main.js"></script>
+  <script type="text/javascript">
+    function googleTranslateElementInit(){
+      new google.translate.TranslateElement({
+        pageLanguage:"en",
+        layout:google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+      );
+    }
+  </script> -->
 
 </body>
 

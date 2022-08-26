@@ -1,0 +1,7 @@
+data_container/
+__pycache__/
+model_container/
+*.xml
+.vscode/
+css/
+img/

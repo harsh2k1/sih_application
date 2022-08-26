@@ -73,6 +73,7 @@ def test():
     print(final)
     final_predicted_output = encodings.get(np.argmax(final))
     print(final_predicted_output)
+    return final_predicted_output
 
 
 if __name__ == "__main__":

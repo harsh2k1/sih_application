@@ -1,4 +1,4 @@
-from importlib.resources import path
+# from importlib.resources import path
 import speech_recognition as sr 
 import os 
 from pydub import AudioSegment
@@ -16,12 +16,16 @@ from nltk.stem import PorterStemmer
 from nltk.stem import WordNetLemmatizer
 import spacy
 
-r = sr.Recognizer()
+# r = sr.Recognizer()
 
-lemmatizer = WordNetLemmatizer()
-stopwords_english = stopwords.words('english')
+# lemmatizer = WordNetLemmatizer()
+# stopwords_english = stopwords.words('english')
 
 def clean_data(text):
+    r = sr.Recognizer()
+
+    lemmatizer = WordNetLemmatizer()
+    stopwords_english = stopwords.words('english')
     text_clean = []
     text_tokens = word_tokenize(text)
     

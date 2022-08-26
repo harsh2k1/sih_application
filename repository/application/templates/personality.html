@@ -398,6 +398,18 @@ footer button.show{
 </style>
 </head>
 <body>
+    <div id = "google_element"></div>
+  <script src = "http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate">
+    
+  </script>
+
+  <script>
+    function loadGoogleTranslate(){
+      new google.translate.TranslateElement(
+        "google_element"
+      )
+    }
+  </script>
     <!-- start Quiz button -->
     <div class="start_btn"><button>Start Assessment</button></div>
 
@@ -691,31 +703,37 @@ function showQuetions(index){
     option_list.innerHTML = option_tag; //adding new div tag inside option_tag
     
     const option = option_list.querySelectorAll(".option");
-
+    let answers = [];
     // set onclick attribute to all available options
     for(i=0; i < option.length; i++){
         option[i].setAttribute("onclick", "optionSelected(this)");
+       
     }
 }
 // creating the new div tags which for icons
 let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
 let crossIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
 
+
 //if user clicked on option
 function optionSelected(answer){
     clearInterval(counter); //clear counter
     clearInterval(counterLine); //clear counterLine
     let userAns = answer.textContent; //getting user selected option
+    console.log(userAns)
+    answers.push(userAns);
     let correcAns = questions[que_count].answer; //getting correct answer from array
     const allOptions = option_list.children.length; //getting all option items
     
     if(userAns == correcAns){ //if user selected option is equal to array's correct answer
         userScore += 1; //upgrading score value with 1
+        console.log(answer)
         answer.classList.add("correct"); //adding green color to correct selected option
         answer.insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to correct selected option
         console.log("Correct Answer");
         console.log("Your correct answers = " + userScore);
     }else{
+        console.log(answer)
         answer.classList.add("incorrect"); //adding red color to correct selected option
         answer.insertAdjacentHTML("beforeend", crossIconTag); //adding cross icon to correct selected option
         console.log("Wrong Answer");
@@ -799,6 +817,7 @@ function queCounter(index){
     let totalQueCounTag = '<span><p>'+ index +'</p> of <p>'+ questions.length +'</p> Questions</span>';
     bottom_ques_counter.innerHTML = totalQueCounTag;  //adding new span tag inside bottom_ques_counter
 }
+var myJsonString = JSON.stringify(answers);
     </script>
 </body>
 </html>
