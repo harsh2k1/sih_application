@@ -4,11 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/re_lo.css">
-    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../statics/css/re_lo.css">
+    <link rel="shortcut icon" href="../statics/img/logo.png" type="image/x-icon">
     <title>Career Vision - register</title>
 </head>
 <body>
+    <div id = "google_element"></div>
+  <script src = "http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate">
+    
+  </script>
+
+  <script>
+    function loadGoogleTranslate(){
+      new google.translate.TranslateElement(
+        "google_element"
+      )
+    }
+  </script>
     <div class="container">
         <div class="left">
             
@@ -17,7 +29,7 @@
         </div>
         <div class="right">
            <div class="text">
-            <img src="./img/logo.png" alt="logo" height="100">
+            <img src="../statics/img/logo.png" alt="logo" height="100">
             <h1>WELLCOME TO CAREER VISION</h1>
             <h2>Step Toward Your Dream</h2>
            </div> 
@@ -31,9 +43,10 @@
                 <input type="text" placeholder="Email"><br>
                 <input type="password" placeholder="Passwword"><br>
                 <input type="password" placeholder="Confirm Password"><br>
-                <button> <a href="users-profile.html" style="color: white; text-decoration:none;">REGISTER</a></button>
+                <!-- <button> <a href="../template/Dashboard-index.html" style="color: white; text-decoration:none;">REGISTER</a></button> -->
+                <button> <a href="http://127.0.0.1:5000/dashboad" style="color: white; text-decoration:none;">REGISTER</a></button>
            
-                <h3>Already Have Account ? <a href="login.html">Login</a> </h3>
+                <h3>Already Have Account ? <a href="http://127.0.0.1:5000/login">Login</a> </h3>
                 
             </form>
 

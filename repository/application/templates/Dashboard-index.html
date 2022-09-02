@@ -10,49 +10,61 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="./img/Dashboard-assets/img/logo.png" rel="icon">
-  <link href="./img/Dashboard-assets/img/logo.png" rel="apple-touch-icon">
+  <link href="../static/img/logo.png" rel="icon">
+  <link href="../static/img/logo.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="vendor/das_vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/das_vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="vendor/das_vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="vendor/das_vendorboxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="vendor/das_vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="vendor/das_vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="vendor/das_vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="../static/css/das_css_vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/css/das_css_vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/css/das_css_vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../static/css/das_css_vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static/css/das_css_vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../static/css/das_css_vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../static/css/das_css_vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="./css/das_style.css" rel="stylesheet">
+  <link href="../static/css/das_style.css" rel="stylesheet">
 
   <!-- fontawsome icon -->
   <script src="https://kit.fontawesome.com/d3934b3ba3.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+  <div id = "google_element"></div>
+  <script src = "http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate">
+    
+  </script>
+
+  <script>
+    function loadGoogleTranslate(){
+      new google.translate.TranslateElement(
+        "google_element"
+      )
+    }
+  </script>
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img src="./img/Dashboard-assets/img/logo.png" alt="">
+      <a href="http://127.0.0.1:5000/" class="logo d-flex align-items-center">
+        <img src="../static/img/logo.png" alt="">
         <span class="d-none d-lg-block">CareerSpring</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div>
     <!-- End Logo -->
 
-    <!-- <div class="search-bar">
+    <div class="search-bar">
       <form class="search-form d-flex align-items-center" method="POST" action="#">
         <input type="text" name="query" placeholder="Search" title="Enter search keyword">
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form> 
-    </div> -->
+    </div>
     <!-- End Search Bar -->
 
     <nav class="header-nav ms-auto">
@@ -82,7 +94,7 @@
 
             <li class="notification-item">
              
-              <img src="./img/Dashboard-assets/img/iconforall.PNG" alt=""></img>
+              <img src="../static/img/Dashboard-assets/img/iconforall.PNG" alt=""></img>
               <div>
                 <h4>Congratulations </h4>
                 <p>You have successfully registered yourself.</p>
@@ -96,7 +108,7 @@
 
             <li class="notification-item">
       
-              <img src="./img/Dashboard-assets/img/iconforall.PNG" alt=""></img>
+              <img src="../static/img/Dashboard-assets/img/iconforall.PNG" alt=""></img>
               <div>
                 <h4>Take First Step Towards your Goals</h4>
                 <p>Take your Test</p>
@@ -121,7 +133,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="./img/Dashboard-assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <img src="../static/img/Dashboard-assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
           <!-- </a>End Profile Iamge Icon -->
 
@@ -135,7 +147,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="http://127.0.0.1:5000/user-profile">
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
               </a>
@@ -145,7 +157,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="http://127.0.0.1:5000/user-profile">
                 <i class="bi bi-gear"></i>
                 <span>Account Settings</span>
               </a>
@@ -155,7 +167,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+              <a class="dropdown-item d-flex align-items-center" href="http://127.0.0.1:5000/pages-faq">
                 <i class="bi bi-question-circle"></i>
                 <span>Need Help?</span>
               </a>
@@ -185,7 +197,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link " href="http://127.0.0.1:5000/">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -202,32 +214,32 @@
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link collapsed" href="http://127.0.0.1:5000/user-profile">
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link collapsed" href="http://127.0.0.1:5000/user-profile">
           <i class="fa-regular fa-file"></i>
           <span>Report</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
+        <a class="nav-link collapsed" href="http://127.0.0.1:5000/pages-faq">
           <i class="bi bi-question-circle"></i>
           <span>Help</span>
         </a>
       </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
+        <a class="nav-link collapsed" href="http://127.0.0.1:5000/pages-contact">
           <i class="bi bi-envelope"></i>
           <span>Recommendations</span>
         </a>
-      </li><!-- End Contact Page Nav -->
+      </li>
 
 
 
@@ -241,7 +253,7 @@
       <h1>Dashboard</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="http://127.0.0.1:5000/">Home</a></li>
           <li class="breadcrumb-item active">Dashboard</li>
         </ol>
       </nav>
@@ -254,68 +266,21 @@
         <div class="col-lg-8">
           <div class="row">
 
-            <!-- Sales Card -->
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card sales-card">
 
-                <!-- <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
 
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div> -->
-
-                <div class="card-body">
-                  <h5 class="card-title">Aptitude test</h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="fa-solid fa-circle-question"></i>
-                    </div>
-                    <div class="ps-3">
-                      
-                     <a href="aptitude_ass.html"><button class="btn btn-primary">Take Test</button></a> 
-                      <!-- <span class="text-success small pt-1 fw-bold">+3%</span> <span class="text-muted small pt-2 ps-1">increase</span> -->
-
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div><!-- End Sales Card -->
+                
 
             <!-- Revenue Card -->
-            <div class="col-xxl-4 col-md-6">
+            <div class="col-xxl-4 col-md-6" style="width:1000px ; margin-left: 150px;">
               <div class="card info-card revenue-card">
 
-                <!-- <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div> -->
-
                 <div class="card-body">
-                  <h5 class="card-title">Personality Test</h5>
+                  
 
                   <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="fa-solid fa-user"></i>
-                    </div>
-                    <div class="ps-3">
-                      <a href="aptitude_ass.html"><button class="btn btn-primary">Take Test</button></a> 
+                   
+                    <div class="ps-3" style="margin-top: 30px; margin-left: 250px; font-size: 20px;">
+                      <a href="http://127.0.0.1:5000/dashboard-inner"><button class="btn btn-primary">Take Assessments</button></a> 
                       <!-- <span class="text-success small pt-1 fw-bold">+8%</span> <span class="text-muted small pt-2 ps-1">increase</span> -->
 
                     </div>
@@ -326,115 +291,12 @@
             </div><!-- End Revenue Card -->
 
             <!-- Customers Card -->
-            <div class="col-xxl-4 col-xl-12">
-
-              <div class="card info-card customers-card">
-
-                <!-- <div class="filter">
-                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" href="#">Today</a></li>
-                    <li><a class="dropdown-item" href="#">This Month</a></li>
-                    <li><a class="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div> -->
-
-                <div class="card-body">
-                  <h5 class="card-title">Video test</h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                      <i class="fa-solid fa-video"></i>
-                    </div>
-                    <div class="ps-3">
-                      <a href="aptitude_ass.html"><button class="btn btn-primary">Take Test</button></a> 
-                      <!-- <span class="text-danger small pt-1 fw-bold"></span> <span class="text-muted small pt-2 ps-1">decrease</span> -->
-
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-             </div><!-- End Customers Card -->
-
             
-
-
-       
-              
-
-            </div>
           </div>
 
         
-          <!-- News & Updates Traffic -->
-          <div class="card">
-            <div class="filter">
-              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <li class="dropdown-header text-start">
-                  <h6>Filter</h6>
-                </li>
-
-                <li><a class="dropdown-item" href="#">Today</a></li>
-                <li><a class="dropdown-item" href="#">This Month</a></li>
-                <li><a class="dropdown-item" href="#">This Year</a></li>
-              </ul>
-            </div>
-
-            <div class="card-body pb-0">
-              <h5 class="card-title">News &amp; Updates <span>| This Week</span></h5>
-
-              <div class="news">
-                <div class="post-item clearfix">
-                  <img src="./img/Dashboard-assets/img/news-1.jpg" alt="">
-                  <h4><a href="#">BARRON'S Comcast Earnings Show Internet Subscriber Growth Is Slowing</a></h4>
-                  <p>BARRON'S Comcast Earnings Show Internet Subscriber Growth Is Slowing</p>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="./img/Dashboard-assets/img/news-2.jpg" alt="">
-                  <h4><a href="#">Tempur Sealy says supply chain challenges drove a $100 million increase in its backlog</a></h4>
-                  <p>Tempur Sealy says supply chain challenges drove a $100 million increase in its backlog</p>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="./img/Dashboard-assets/img/news-3.jpg" alt="">
-                  <h4><a href="#">This city just recorded the U.S.’s highest-ever average gasoline price</a></h4>
-                  <p>This city just recorded the U.S.’s highest-ever average gasoline price</p>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="./img/Dashboard-assets/img/news-4.jpg" alt="">
-                  <h4><a href="#">Capital Wealth Management, Llc Buys Invesco Total Return Bond ETF, SPDR S&P 400 Mid Cap ...</a></h4>
-                  <p>Capital Wealth Management, Llc Buys Invesco Total Return Bond ETF, SPDR S&P 400 Mid Cap ...</p>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="./img/Dashboard-assets/img/news-5.jpg" alt="">
-                  <h4><a href="#">Conservest Capital Advisors, Inc. Buys ARK Fintech Innovation ETF, iShares Core Dividend Growth ...</a></h4>
-                  <p>Conservest Capital Advisors, Inc. Buys ARK Fintech Innovation ETF, iShares Core Dividend Growth ...</p>
-                </div>
-
-              </div><!-- End sidebar recent posts-->
-
-            </div>
-          </div><!-- End News & Updates -->
-
-        </div><!-- End Right side columns -->
-
-      </div>
-    </section>
-
-  </main><!-- End #main -->
-
   <!-- ======= Footer ======= -->
-  <footer id="footer" class="footer">
+  <footer id="footer" class="footer" >
     <div class="copyright">
       &copy; Copyright <strong><span>CareerSpring</span></strong>. All Rights Reserved
     </div>
@@ -443,17 +305,17 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="vendor/das_vendor/bootstrap/js/bootstrap.bundle.js"></script>
-  <script src="vendor/das_vendor/php-email-form/validate.js"></script>
-  <script src="vendor/das_vendor/quill/quill.min.js"></script>
-  <script src="vendor/das_vendor/tinymce/tinymce.min.js"></script>
-  <script src="vendor/das_vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="vendor/das_vendor/chart.js/chart.min.js"></script>
-  <script src="vendor/das_vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="vendor/das_vendor/echarts/echarts.min.js"></script>
+  <script src="../static/css/das_vendor/bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="../static/css/das_vendor/php-email-form/validate.js"></script>
+  <script src="../static/css/das_vendor/quill/quill.min.js"></script>
+  <script src="../static/css/das_vendor/tinymce/tinymce.min.js"></script>
+  <script src="../static/css/das_vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="../static/css/das_vendor/chart.js/chart.min.js"></script>
+  <script src="../static/css/das_vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../static/css/das_vendor/echarts/echarts.min.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="./js/das_main.js"></script>
+  <script src="../static/js/das_main.js"></script>
 
 </body>
 

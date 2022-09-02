@@ -1,108 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
- 
+
   <title>CareerSpring</title>
   <meta content="" name="description">
- 
+
   <meta content="" name="keywords">
- 
+
   <!-- Favicons -->
-  <link href="/img/logo.png" rel="icon">
-  <link href="assets/img/logo" rel="apple-touch-icon">
- 
+  <link href="../static/img/logo.png" rel="icon">
+  <link href="../static/img/logo.png" rel="apple-touch-icon">
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
- 
+
   <!-- Vendor CSS Files -->
-  <link href="vendor/das_vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/das_vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="vendor/das_vendor/aos/aos.css" rel="stylesheet">
-  <link href="vendor/das_vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="vendor/das_vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link href="vendor/das_vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
- 
+  <link href="../static/css/das_css_vendor/bootstrap/css/bootstrap-grid.min.css" rel="stylesheet">
+  <link href="../static/css/das_css_vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/css/das_css_vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/css/das_css_vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../static/css/das_css_vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../static/css/das_css_vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
   <!-- Template Main CSS File -->
-  <link href="./css/assets_style.css" rel="stylesheet">
- 
+  <link href="../static/css/assets_style.css" rel="stylesheet">
+
 </head>
- 
+
 <body>
- 
+
+  <div id = "google_element"></div>
+  <script src = "http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate">
+    
+  </script>
+
+  <script>
+    function loadGoogleTranslate(){
+      new google.translate.TranslateElement(
+        "google_element"
+      )
+    }
+  </script>
+
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
- 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img src="./img/assets/img/logo.png" alt="logo">
+
+      <a href="http://127.0.0.1:5000/" class="logo d-flex align-items-center">
+        <img src="../static/img/logo.png" alt="logo">
         <span>CareerSpring</span>
       </a>
- 
+
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
- 
-          <!-- <li><a class="nav-link scrollto" href="#services">Services</a></li> -->
-          <li><a class="nav-link scrollto" href="#pricing">Premium</a></li>
- 
-         
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
- 
- 
- 
- 
- 
- 
-          <!-- <li><a href="blog.html">Blog</a></li> -->
-          <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span>Services</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 2</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-            </ul> -->
- 
- 
- 
- 
- 
- 
- 
+              <li><a href="http://127.0.0.1:5000/mentorship">1:1 Mentorship</a></li>
+              <!-- <li><a href="https://www.collegesearch.in/">College Search</a></li> -->
+              <li><a href="http://127.0.0.1:5000/test">College Search</a></li>
+              <li><a href="http://127.0.0.1:5000/login">Career Assessment Test</a></li>
+            </ul> 
           </li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
-          <li><a class="getstarted scrollto" href="login & register/login.html"target="_blank">Login/Register</a></li>
+          <li><a class="getstarted scrollto" href="http://127.0.0.1:5000/login"target="_blank">Login/Register</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
- 
+
     </div>
   </header><!-- End Header -->
- 
+
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="hero d-flex align-items-center">
- 
+  <section id="hero" class="hero d-flex align-items-center" style="height:300px;">
+
     <div class="container">
-   
+    
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center">
           <h1 data-aos="fade-up">Step Towards Your Best Future</h1>
           <h2 data-aos="fade-up" data-aos-delay="400">We provide an innovative solution to help you  know what is good for you.</h2>
           <div data-aos="fade-up" data-aos-delay="600">
-            <div class="text-center text-lg-start"> 
-              <a href="login.html"target="_blank" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+            <div class="text-center text-lg-start">
+              <a href="http://127.0.0.1:5000/"target="_blank" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                 <span>Get Started</span>
                 <i class="bi bi-arrow-right"></i>
               </a>
@@ -110,25 +95,25 @@
           </div>
         </div>
         <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
-          <img src="./img/assets/img/hero-img.png" class="img-fluid" alt="">
+          <img src="../static/img/assets/img/hero-img.png" class="img-fluid" alt="">
         </div>
       </div>
     </div>
- 
+
   </section><!-- End Hero -->
- 
+
   <main id="main">
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
-     
- 
+      
+
       <div class="container" data-aos="fade-up">
-        <header class="section-header">
+        <header class="section-header" style="padding: 5px;">
           <!-- <h2>Features</h2> -->
           <p>What is CareerSpring ?</p>
         </header>
         <div class="row gx-0">
- 
+
           <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
             <div class="content", style="color: rgb(8, 8, 125)">
               <h1><b>Invest your energy and time in Right direction</b></h1>
@@ -136,7 +121,7 @@
               <p>
                 We are a team of passionate thinkers and innovative developers who are here help you with your Career guidance .
                 We provide a secured platform where you can give a Test and get to know more about your strength and weekness . It also help you to know you which career path is best for you and how to move Towards that.
-               
+                
               </p>
               <!-- <div class="text-center text-lg-start">
                 <a href="#" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
@@ -146,64 +131,64 @@
               </div> -->
             </div>
           </div>
- 
+
           <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-            <img src="./img/assets/img/about.jpeg" class="img-fluid" alt="">
+            <img src="../static/img/assets/img/about.jpeg" class="img-fluid" alt="">
           </div>
- 
+
         </div>
       </div>
- 
+
     </section><!-- End About Section -->
- 
+
     <!-- ======= Values Section ======= -->
     <section id="values" class="values">
- 
+
       <div class="container" data-aos="fade-up">
- 
+
         <header class="section-header">
           <!-- <h2>Pay, Invest, Watch your money grow</h2> -->
           <p>Take test, Personalise report and 1:1 mentorship</p>
         </header>
- 
+
         <div class="row">
- 
+
           <div class="col-lg-4">
             <div class="box" data-aos="fade-up" data-aos-delay="200">
-              <img src="./img/assets/img/values-1.jpg" class="img-fluid" alt="">
+              <img src="../static/img/assets/img/values-1.jpg" class="img-fluid" alt="">
               <h3>Step 1: Create an Account</h3>
               <p>Create an Account and login through our app.</p>
             </div>
           </div>
- 
+
           <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="box" data-aos="fade-up" data-aos-delay="400">
-              <img src="./img/assets/img/values-2.png" class="img-fluid" alt="">
+              <img src="../static/img/assets/img/values-2.png" class="img-fluid" alt="">
               <h3>Step 2: choose free plan</h3>
               <p>Go to dashboad and take test</p>
             </div>
           </div>
- 
+
           <div class="col-lg-4 mt-4 mt-lg-0">
             <div class="box" data-aos="fade-up" data-aos-delay="600">
-              <img src="./img/assets/img/values-3.png" class="img-fluid" alt="">
+              <img src="../static/img/assets/img/values-3.png" class="img-fluid" alt="">
               <h3>Step 3: Relax</h3>
               <p>Wait for your results analysis and then Get 1:1 Mentorship</p>
             </div>
           </div>
- 
+
         </div>
- 
+
       </div>
- 
+
     </section><!-- End Values Section -->
- 
+
     <!-- ======= Counts Section ======= -->
     <!-- <section id="counts" class="counts">
       <div class="container" data-aos="fade-up">
- 
+
         <div class="row gy-4">
- 
+
           <div class="col-lg-3 col-md-6">
             <div class="count-box">
               <i class="bi bi-emoji-smile"></i>
@@ -213,7 +198,7 @@
               </div>
             </div>
           </div>
- 
+
           <div class="col-lg-3 col-md-6">
             <div class="count-box">
               <i class="bi bi-journal-richtext" style="color: #ee6c20;"></i>
@@ -223,7 +208,7 @@
               </div>
             </div>
           </div>
- 
+
           <div class="col-lg-3 col-md-6">
             <div class="count-box">
               <i class="bi bi-headset" style="color: #15be56;"></i>
@@ -233,7 +218,7 @@
               </div>
             </div>
           </div>
- 
+
           <div class="col-lg-3 col-md-6">
             <div class="count-box">
               <i class="bi bi-people" style="color: #bb0852;"></i>
@@ -243,84 +228,84 @@
               </div>
             </div>
           </div>
- 
+
         </div>
- 
+
       </div> -->
     <!-- </section>End Counts Section -->
- 
+
     <!-- ======= Features Section ======= -->
     <section id="features" class="features">
- 
+
       <div class="container" data-aos="fade-up">
- 
+
         <header class="section-header">
           <!-- <h2>Features</h2> -->
           <p>Why CareerSpring?</p>
         </header>
- 
+
         <div class="row">
- 
+
           <div class="col-lg-6">
-            <img src="./img/assets/img/features.png" class="img-fluid" alt="">
+            <img src="../static/img/assets/img/features.png" class="img-fluid" alt="">
           </div>
- 
+
           <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
             <div class="row align-self-center gy-4">
- 
+
               <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
                 <div class="feature-box d-flex align-items-center">
                   <i class="bi bi-check"></i>
                   <h3>To Choose Right Goals</h3>
                 </div>
               </div>
- 
+
               <div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
                 <div class="feature-box d-flex align-items-center">
                   <i class="bi bi-check"></i>
                   <h3> Mentorrship From industrial Expert</h3>
                 </div>
               </div>
- 
+
               <div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
                 <div class="feature-box d-flex align-items-center">
                   <i class="bi bi-check"></i>
                   <h3>To Clear career related doubts.
                 </div>
               </div>
- 
+
               <div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
                 <div class="feature-box d-flex align-items-center">
                   <i class="bi bi-check"></i>
                   <h3>Guidance About Your Dream Career </h3>
                 </div>
               </div>
- 
+
               <div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
                 <div class="feature-box d-flex align-items-center">
                   <i class="bi bi-check"></i>
                   <h3>Know about you Strength and weakness</h3>
                 </div>
               </div>
- 
+
               <div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
                 <div class="feature-box d-flex align-items-center">
                   <i class="bi bi-check"></i>
                   <h3>Updates about Schoolarship </h3>
                 </div>
               </div>
- 
- 
+
+
             </div>
           </div>
- 
+
         </div> <!-- / row -->
- 
+
         <!-- Feature Tabs -->
         <!-- <div class="row feture-tabs" data-aos="fade-up">
           <div class="col-lg-6">
             <h3>Neque officiis dolore maiores et exercitationem quae est seda lidera pat claero</h3>
- 
+
             Tabs
             <ul class="nav nav-pills mb-3">
               <li>
@@ -333,10 +318,10 @@
                 <a class="nav-link" data-bs-toggle="pill" href="#tab3">Corrupti</a>
               </li>
             </ul>End Tabs
- 
+
             Tab Content
             <div class="tab-content">
- 
+
               <div class="tab-pane fade show active" id="tab1">
                 <p>Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
                 <div class="d-flex align-items-center mb-2">
@@ -350,7 +335,7 @@
                 </div>
                 <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et perferendis.</p>
               </div>End Tab 1 Content
- 
+
               <div class="tab-pane fade show" id="tab2">
                 <p>Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
                 <div class="d-flex align-items-center mb-2">
@@ -364,7 +349,7 @@
                 </div>
                 <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et perferendis.</p>
               </div>End Tab 2 Content
- 
+
               <div class="tab-pane fade show" id="tab3">
                 <p>Consequuntur inventore voluptates consequatur aut vel et. Eos doloribus expedita. Sapiente atque consequatur minima nihil quae aspernatur quo suscipit voluptatem.</p>
                 <div class="d-flex align-items-center mb-2">
@@ -378,30 +363,30 @@
                 </div>
                 <p>Non quod totam minus repellendus autem sint velit. Rerum debitis facere soluta tenetur. Iure molestiae assumenda sunt qui inventore eligendi voluptates nisi at. Dolorem quo tempora. Quia et perferendis.</p>
               </div>End Tab 3 Content
- 
+
             </div>
- 
+
           </div>
- 
+
           <div class="col-lg-6">
             <img src="assets/img/features-2.png" class="img-fluid" alt="">
           </div> -->
- 
+
         <!-- </div>End Feature Tabs -->
- 
+
         <!-- Feature Icons -->
         <div class="row feature-icons" data-aos="fade-up">
           <h3>Benefits of CareerSpring ?</h3>
- 
+
           <div class="row">
- 
+
             <div class="col-xl-4 text-center" data-aos="fade-right" data-aos-delay="100">
-              <img src="./img/assets/img/features-3.png" class="img-fluid p-4" alt="">
+              <img src="../static/img/assets/img/features-3.png" class="img-fluid p-4" alt="" height="400px">
             </div>
- 
+
             <div class="col-xl-8 d-flex content">
               <div class="row align-self-center gy-4">
- 
+
                 <div class="col-md-6 icon-box" data-aos="fade-up">
                   <i class="ri-line-chart-line"></i>
                   <div>
@@ -409,7 +394,7 @@
                     <p>Register yourself and take your test</p>
                   </div>
                 </div>
- 
+
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
                   <i class="ri-stack-line"></i>
                   <div>
@@ -417,7 +402,7 @@
                     <p>Get your Personalise report which having complete Analysis about you skills.</p>
                   </div>
                 </div>
- 
+
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
                   <i class="ri-brush-4-line"></i>
                   <div>
@@ -425,7 +410,7 @@
                     <p>Get 1:1 Mentorship with highly skilled people and ask your doubts.</p>
                   </div>
                 </div>
- 
+
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
                   <i class="ri-magic-line"></i>
                   <div>
@@ -433,7 +418,7 @@
                     <p>You will be getting updates about all upcoming Schoolarship.</p>
                   </div>
                 </div>
- 
+
                 <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
                   <i class="ri-command-line"></i>
                   <div>
@@ -441,32 +426,32 @@
                     <p>We will provide you the right path for your dream career.</p>
                   </div>
                 </div>
- 
-         
- 
+
+          
+
               </div>
             </div>
- 
+
           </div>
- 
+
         </div><!-- End Feature Icons -->
- 
+
       </div>
- 
+
     </section><!-- End Features Section -->
- 
+
     <!-- ======= Services Section ======= -->
     <!-- <section id="services" class="services">
- 
+
       <div class="container" data-aos="fade-up">
- 
+
         <header class="section-header">
           <h2>Services</h2>
           <p>Veritatis et dolores facere numquam et praesentium</p>
         </header>
- 
+
         <div class="row gy-4">
- 
+
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="service-box blue">
               <i class="ri-discuss-line icon"></i>
@@ -475,7 +460,7 @@
               <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
- 
+
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="service-box orange">
               <i class="ri-discuss-line icon"></i>
@@ -484,7 +469,7 @@
               <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
- 
+
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <div class="service-box green">
               <i class="ri-discuss-line icon"></i>
@@ -493,7 +478,7 @@
               <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
- 
+
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="service-box red">
               <i class="ri-discuss-line icon"></i>
@@ -502,7 +487,7 @@
               <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
- 
+
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
             <div class="service-box purple">
               <i class="ri-discuss-line icon"></i>
@@ -511,7 +496,7 @@
               <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
- 
+
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
             <div class="service-box pink">
               <i class="ri-discuss-line icon"></i>
@@ -520,43 +505,27 @@
               <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
- 
+
         </div>
- 
+
       </div> -->
- 
+
     <!-- </section>End Services Section -->
- 
+
     <!-- ======= Pricing Section ======= -->
     <section id="pricing" class="pricing">
- 
+
       <div class="container" data-aos="fade-up">
- 
+
         <header class="section-header">
           <h2>Pricing</h2>
           <p>Check our Pricing</p>
         </header>
- 
+
         <div class="row gy-4" data-aos="fade-left">
- 
-          <!-- <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-            <div class="box">
-              <h3 style="color: #07d5c0;">Free Plan</h3>
-              <div class="price"><sup>$</sup>0<span> / mo</span></div>
-              <img src="assets/img/pricing-free.png" class="img-fluid" alt="">
-              <ul>
-                <li>Instant Withdrawals</li>
-                <li>Verified Coins</li>
-                <li>Exclusive Trade Recommendations</li>
-                <li class="na">Ad Free Experience</li>
-                <li class="na">Get Detailed Insights of your holdings</li>
-                <li class="na">Set Financial Goals</li>
-                <li class="na">Global and Local News, Opinions, Views and Analysis</li>
-              </ul>
-              <a href="#" class="btn-buy">Buy Now</a>
-            </div>
-          </div> -->
- 
+
+          
+
           <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200" style="margin-left: 300px;">
             <div class="box">
               <span class="featured">Featured</span>
@@ -564,7 +533,7 @@
               /* display: inline-block; */
               padding-left: 30%;">Free Plan</h3>
               <div class="price"><sup>INR</sup>0<span> / mo</span></div>
-              <img src="./img/assets/img/pricing-starter.png" class="img-fluid" alt="">
+              <img src="../static/img/assets/img/pricing-starter.png" class="img-fluid" alt="" style="margin-left: 0px;">
               <ul>
                 <li>Free Test for secondary school</li>
                 <li>1:1 Mentorship</li>
@@ -577,12 +546,12 @@
               <a href="#" class="btn-buy">start now</a>
             </div>
           </div>
- 
+
           <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300"style="margin-left: 60px">
             <div class="box">
               <h3 style="color: #ff901c;">Pro Plan</h3>
               <div class="price"><sup>INR</sup>199<span> / mo</span></div>
-              <img src="/img/assets/img/pricing-business.png" class="img-fluid" alt="">
+              <img src="../static/img/assets/img/pricing-business.png" class="img-fluid" alt="">
               <ul>
                 <li>Test for High school</li>
                 <li>1:1 Mentorships</li>
@@ -595,7 +564,7 @@
               <a href="#" class="btn-buy">Buy Now</a>
             </div>
           </div>
- 
+
           <!-- <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
             <div class="box">
               <h3 style="color: #ff0071;">Ultimate Plan</h3>
@@ -613,23 +582,23 @@
               <a href="#" class="btn-buy">Buy Now</a>
             </div>
           </div> -->
- 
-        </div>
- 
+
+        <!-- </div>
+
       </div>
- 
-    </section><!-- End Pricing Section -->
- 
+
+    </section>End Pricing Section -->
+
     <!-- ======= F.A.Q Section ======= -->
     <!-- <section id="faq" class="faq">
- 
+
       <div class="container" data-aos="fade-up">
- 
+
         <header class="section-header">
           <h2>F.A.Q</h2>
           <p>Frequently Asked Questions</p>
         </header>
- 
+
         <div class="row">
           <div class="col-lg-6"> -->
             <!-- F.A.Q List 1-->
@@ -646,7 +615,7 @@
                   </div>
                 </div>
               </div>
- 
+
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-2">
@@ -659,7 +628,7 @@
                   </div>
                 </div>
               </div>
- 
+
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-content-3">
@@ -672,15 +641,15 @@
                   </div>
                 </div>
               </div>
- 
+
             </div>
           </div>
- 
+
           <div class="col-lg-6"> -->
- 
+
             <!-- F.A.Q List 2-->
             <!-- <div class="accordion accordion-flush" id="faqlist2">
- 
+
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-1">
@@ -693,7 +662,7 @@
                   </div>
                 </div>
               </div>
- 
+
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-2">
@@ -706,7 +675,7 @@
                   </div>
                 </div>
               </div>
- 
+
               <div class="accordion-item">
                 <h2 class="accordion-header">
                   <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2-content-3">
@@ -719,26 +688,26 @@
                   </div>
                 </div>
               </div>
- 
+
             </div>
           </div>
- 
+
         </div>
- 
+
       </div> -->
- 
+
     <!-- </section>End F.A.Q Section -->
- 
+
     <!-- ======= Portfolio Section =======
     <section id="portfolio" class="portfolio">
- 
+
       <div class="container" data-aos="fade-up">
- 
+
         <header class="section-header">
           <h2>Portfolio</h2>
           <p>Check our latest work</p>
         </header>
- 
+
         <div class="row" data-aos="fade-up" data-aos-delay="100">
           <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
@@ -749,9 +718,9 @@
             </ul>
           </div>
         </div>
- 
+
         <div class="row gy-4 portfolio-container" data-aos="fade-up" data-aos-delay="200">
- 
+
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
@@ -765,7 +734,7 @@
               </div>
             </div>
           </div>
- 
+
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
@@ -779,7 +748,7 @@
               </div>
             </div>
           </div>
- 
+
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
@@ -793,7 +762,7 @@
               </div>
             </div>
           </div>
- 
+
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
@@ -807,7 +776,7 @@
               </div>
             </div>
           </div>
- 
+
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
@@ -821,7 +790,7 @@
               </div>
             </div>
           </div>
- 
+
           <div class="col-lg-4 col-md-6 portfolio-item filter-app">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
@@ -835,7 +804,7 @@
               </div>
             </div>
           </div>
- 
+
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
@@ -849,7 +818,7 @@
               </div>
             </div>
           </div>
- 
+
           <div class="col-lg-4 col-md-6 portfolio-item filter-card">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
@@ -863,7 +832,7 @@
               </div>
             </div>
           </div>
- 
+
           <div class="col-lg-4 col-md-6 portfolio-item filter-web">
             <div class="portfolio-wrap">
               <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
@@ -877,26 +846,26 @@
               </div>
             </div>
           </div>
- 
+
         </div>
- 
+
       </div> -->
- 
+
     <!-- </section>End Portfolio Section -->
- 
+
     <!-- ======= Testimonials Section ======= -->
     <!-- <section id="testimonials" class="testimonials">
- 
+
       <div class="container" data-aos="fade-up">
- 
+
         <header class="section-header">
           <h2>Testimonials</h2>
           <p>What they are saying about us</p>
         </header>
- 
+
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="200">
           <div class="swiper-wrapper">
- 
+
             <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="stars">
@@ -911,8 +880,8 @@
                   <h4>Ceo &amp; Founder</h4>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
- 
+            </div> End testimonial item -->
+
             <!-- <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="stars">
@@ -927,8 +896,8 @@
                   <h4>Designer</h4>
                 </div>
               </div>
-            </div><!-- End testimonial item -->
- 
+            </div> End testimonial item -->
+
             <!-- <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="stars">
@@ -944,7 +913,7 @@
                 </div>
               </div> -->
             <!-- </div>End testimonial item -->
- 
+
             <!-- <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="stars">
@@ -960,7 +929,7 @@
                 </div>
               </div>
             </div>End testimonial item -->
- 
+
             <!-- <div class="swiper-slide">
               <div class="testimonial-item">
                 <div class="stars">
@@ -977,27 +946,27 @@
               </div>
             </div>
             End testimonial item -->
- 
+
           <!-- </div>
           <div class="swiper-pagination"></div>
         </div>
- 
+
       </div> -->
  
     <!-- </section>End Testimonials Section -->
- 
+
     <!-- ======= Team Section ======= -->
     <section id="team" class="team">
- 
+
       <div class="container" data-aos="fade-up">
- 
+
         <header class="section-header">
           <h2>Team</h2>
           <p>Our hard working team</p>
         </header>
- 
+
         <div class="row gy-4">
- 
+
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
               <div class="member-img">
@@ -1016,7 +985,7 @@
               </div>
             </div>
           </div>
- 
+
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
             <div class="member">
               <div class="member-img">
@@ -1035,7 +1004,7 @@
               </div>
             </div>
           </div>
- 
+
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
             <div class="member">
               <div class="member-img">
@@ -1054,7 +1023,7 @@
               </div>
             </div>
           </div>
- 
+
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
             <div class="member">
               <div class="member-img">
@@ -1073,7 +1042,7 @@
               </div>
             </div>
           </div>
- 
+
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
             <div class="member">
               <div class="member-img">
@@ -1092,7 +1061,7 @@
               </div>
             </div>
           </div>
- 
+
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
             <div class="member">
               <div class="member-img">
@@ -1111,26 +1080,26 @@
               </div>
             </div>
           </div>
- 
- 
- 
- 
+
+
+
+
         </div>
- 
+
       </div>
- 
+
     </section><!-- End Team Section -->
- 
+
     <!-- ======= Clients Section ======= -->
     <!-- <section id="clients" class="clients">
- 
+
       <div class="container" data-aos="fade-up">
- 
+
         <header class="section-header">
           <h2>Our Clients</h2>
           <p>Temporibus omnis officia</p>
         </header>
- 
+
         <div class="clients-slider swiper">
           <div class="swiper-wrapper align-items-center">
             <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
@@ -1145,21 +1114,21 @@
           <div class="swiper-pagination"></div>
         </div>
       </div> -->
- 
+
     <!-- </section>End Clients Section -->
- 
+
     <!-- ======= Recent Blog Posts Section ======= -->
     <!-- <section id="recent-blog-posts" class="recent-blog-posts">
- 
+
       <div class="container" data-aos="fade-up">
- 
+
         <header class="section-header">
           <h2>Blog</h2>
           <p>Recent posts form our Blog</p>
         </header>
- 
+
         <div class="row">
- 
+
           <div class="col-lg-4">
             <div class="post-box">
               <div class="post-img"><img src="assets/img/blog/blog-1.jpg" class="img-fluid" alt=""></div>
@@ -1168,7 +1137,7 @@
               <a href="blog-singe.html" class="readmore stretched-link mt-auto"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
- 
+
           <div class="col-lg-4">
             <div class="post-box">
               <div class="post-img"><img src="assets/img/blog/blog-2.jpg" class="img-fluid" alt=""></div>
@@ -1177,7 +1146,7 @@
               <a href="blog-singe.html" class="readmore stretched-link mt-auto"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
- 
+
           <div class="col-lg-4">
             <div class="post-box">
               <div class="post-img"><img src="assets/img/blog/blog-3.jpg" class="img-fluid" alt=""></div>
@@ -1186,27 +1155,27 @@
               <a href="blog-singe.html" class="readmore stretched-link mt-auto"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
             </div>
           </div>
- 
+
         </div>
- 
+
       </div> -->
- 
+
     <!-- </section>End Recent Blog Posts Section -->
- 
+
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
- 
+
       <div class="container" data-aos="fade-up">
- 
+
         <header class="section-header">
           <h2>Contact</h2>
           <p>Contact Us</p>
         </header>
- 
+
         <div class="row gy-4">
- 
+
           <div class="col-lg-6">
- 
+
             <div class="row gy-4">
               <div class="col-md-6">
                 <div class="info-box">
@@ -1237,53 +1206,53 @@
                 </div>
               </div>
             </div>
- 
+
           </div>
- 
+
           <div class="col-lg-6">
             <form action="forms/contact.php" method="post" class="php-email-form">
               <div class="row gy-4">
- 
+
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required style="border-radius: 5px;padding: 10px; border-color: rgb(211, 211, 211);">
                 </div>
- 
+
                 <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                  <input type="email" class="form-control" name="email" placeholder="Your Email" required  style="border-radius: 5px;padding: 10px; border-color: rgb(211, 211, 211);">
                 </div>
- 
+
                 <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                  <input type="text" class="form-control" name="subject" placeholder="Subject" required style="border-radius: 5px;padding: 10px; border-color: rgb(211, 211, 211);">
                 </div>
- 
+
                 <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required ></textarea>
                 </div>
- 
+
                 <div class="col-md-12 text-center">
                   <div class="loading">Loading</div>
                   <div class="error-message"></div>
                   <div class="sent-message">Your message has been sent. Thank you!</div>
- 
+
                   <button type="submit">Send Message</button>
                 </div>
- 
+
               </div>
             </form>
- 
+
           </div>
- 
+
         </div>
- 
+
       </div>
- 
+
     </section><!-- End Contact Section -->
- 
+
   </main><!-- End #main -->
- 
+
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
- 
+
     <!-- <div class="footer-newsletter">
       <div class="container">
         <div class="row justify-content-center">
@@ -1299,13 +1268,13 @@
         </div>
       </div>
     </div> -->
- 
+
     <div class="footer-top">
       <div class="container">
         <div class="row gy-4">
           <div class="col-lg-5 col-md-12 footer-info">
-            <a href="index.html" class="logo d-flex align-items-center">
-              <img src="/img/logo.png" alt="">
+            <a href="http://127.0.0.1:5000/" class="logo d-flex align-items-center">
+              <img src="../static/img/assets/img/logo.png" alt="">
               <span>CareerSpring</span>
             </a>
             <p>CareerSpring is a platform which help you to know about your best career field.</p>
@@ -1316,7 +1285,7 @@
               <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
             </div>
           </div>
- 
+
           <div class="col-lg-2 col-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
@@ -1327,7 +1296,7 @@
               <li><i class="bi bi-chevron-right"></i> <a href="#">Privacy policy</a></li>
             </ul>
           </div>
- 
+
           <div class="col-lg-2 col-6 footer-links">
             <h4>Our Services</h4>
             <ul>
@@ -1338,7 +1307,7 @@
               <li><i class="bi bi-chevron-right"></i> <a href="#"> Career Awaresness </a></li>
             </ul>
           </div>
- 
+
           <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
             <h4>Contact Us</h4>
             <p>
@@ -1348,42 +1317,47 @@
               <strong>Phone:</strong> +1 5589 55488 55<br>
               <strong>Email:</strong> info@example.com<br>
             </p>
- 
+
           </div>
- 
+
         </div>
       </div>
     </div>
- 
+
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>LooseCoin</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>CareerSpring</span></strong>. All Rights Reserved
       </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
+      
     </div>
   </footer><!-- End Footer -->
- 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
- 
-  <!-- Vendor JS Files -->
-  <script src="vendor/das_vendor/bootstrap/js/bootstrap.bundle.js"></script>
-  <script src="vendor/das_vendor/aos/aos.js"></script>
-  <script src="vendor/das_vendor/php-email-form/validate.js"></script>
-  <script src="vendor/das_vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="vendor/das_vendor/purecounter/purecounter.js"></script>
-  <script src="vendor/das_vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="vendor/das_vendor/glightbox/js/glightbox.min.js"></script>
- 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
- 
-</body>
- 
-</html>
 
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/css/das_css_vendor/bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="../static/css/das_css_vendor/aos/aos.js"></script>
+  <script src="../static/css/das_css_vendor/php-email-form/validate.js"></script>
+  <script src="../static/css/das_css_vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="../static/css/das_css_vendor/purecounter/purecounter.js"></script>
+  <script src="../static/css/das_css_vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/css/das_css_vendor/glightbox/js/glightbox.min.js"></script>
+  <!-- <script src="//www.socialintents.com/api/chat/socialintents.1.3.js#2c9fa6c382cda6250182d6e144ee0c3e" async="async"></script> -->
+  <script src="https://www.socialintents.com/api/socialintents.1.3.js#2c9fa6c382cda6250182d6e144bf0c3b" async="async"></script>
+
+  <!-- templates Main JS File -->
+  <!-- <script src="../static/js/das_main.js"></script>
+  <script type="text/javascript">
+    function googleTranslateElementInit(){
+      new google.translate.TranslateElement({
+        pageLanguage:"en",
+        layout:google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+      );
+    }
+  </script> -->
+
+</body>
+
+</html>

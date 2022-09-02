@@ -10,36 +10,48 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="./img/logo.png" rel="icon">
-  <link href="./img/logo.png" rel="apple-touch-icon">
+  <link href="../static/img/logo.png" rel="icon">
+  <link href="../static/img/logo.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="vendor/das_vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/das_vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="vendor/das_vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="vendor/das_vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="vendor/das_vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="vendor/das_vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="vendor/das_vendor/simple-datatables/style.css" rel="stylesheet">
+  <link href="../static/css/das_vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/css/das_vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../static/css/das_vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../static/css/das_vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static/css/das_vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="../static/css/das_vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="../static/css/das_vendor/simple-datatables/style.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="./css/das_style.css" rel="stylesheet">
+  <link href="../static/css/das_style.css" rel="stylesheet">
 
   
 </head>
 
 <body>
+  <div id = "google_element"></div>
+  <script src = "http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate">
+    
+  </script>
+
+  <script>
+    function loadGoogleTranslate(){
+      new google.translate.TranslateElement(
+        "google_element"
+      )
+    }
+  </script>
 
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
-        <img src="Dashboard-assets/img/logo.png" alt="">
+      <a href="../templates/index.html" class="logo d-flex align-items-center">
+        <img src="../static/img/logo.png" alt="">
         <span class="d-none d-lg-block">CareerSpring</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
@@ -154,7 +166,7 @@
 
             <li class="message-item">
               <a href="#">
-                <img src="Dashboard-assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                <img src="../static/img/Dashboard-assets/img/messages-1.jpg" alt="" class="rounded-circle">
                 <div>
                   <h4>Maria Hudson</h4>
                   <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -168,7 +180,7 @@
 
             <li class="message-item">
               <a href="#">
-                <img src="Dashboard-assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                <img src="../static/img/Dashboard-assets/img/messages-2.jpg" alt="" class="rounded-circle">
                 <div>
                   <h4>Anna Nelson</h4>
                   <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -182,7 +194,7 @@
 
             <li class="message-item">
               <a href="#">
-                <img src="Dashboard-assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                <img src="../static/img/Dashboard-assets/img/messages-3.jpg" alt="" class="rounded-circle">
                 <div>
                   <h4>David Muldon</h4>
                   <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -205,7 +217,7 @@
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="Dashboard-assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <img src="../static/img/Dashboard-assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
           </a><!-- End Profile Iamge Icon -->
 
@@ -219,7 +231,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="../templates/users-profile.html">
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
               </a>
@@ -229,7 +241,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+              <a class="dropdown-item d-flex align-items-center" href="../templates/users-profile.html">
                 <i class="bi bi-gear"></i>
                 <span>Account Settings</span>
               </a>
@@ -239,7 +251,7 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+              <a class="dropdown-item d-flex align-items-center" href="../templates/users-profile.html">
                 <i class="bi bi-question-circle"></i>
                 <span>Need Help?</span>
               </a>
@@ -269,7 +281,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="Dashboard-index.html">
+        <a class="nav-link collapsed" href="../templates/Dashboard-index.html">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -284,27 +296,27 @@
       <li class="nav-heading">Pages</li>
 
       <li class="nav-item">
-        <a class="nav-link " href="users-profile.html">
+        <a class="nav-link " href="../templates/users-profile.html">
           <i class="bi bi-person"></i>
           <span>Profile</span>
         </a>
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-register.html">
+        <a class="nav-link collapsed" href="../templates/pages-register.html">
           <i class="fa-regular fa-file"></i>
           <span>Report</span>
         </a>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-faq.html">
+        <a class="nav-link collapsed" href="../templates/pages-faq.html">
           <i class="bi bi-question-circle"></i>
           <span>Help</span>
         </a>
       </li><!-- End F.A.Q Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="pages-contact.html">
+        <a class="nav-link collapsed" href="../templates/pages-contact.html">
           <i class="bi bi-envelope"></i>
           <span>Contact</span>
         </a>
@@ -320,7 +332,7 @@
       <h1>Profile</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="../templatesindex.html">Home</a></li>
           <li class="breadcrumb-item">Users</li>
           <li class="breadcrumb-item active">Profile</li>
         </ol>
@@ -424,7 +436,7 @@
                     <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                       <div class="col-md-8 col-lg-9">
-                        <img src="Dashboard-assets/img/profile-img.jpg" alt="Profile">
+                        <img src="../static/img/Dashboard-assets/img/profile-img.jpg" alt="Profile">
                         <div class="pt-2">
                           <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
                           <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
@@ -619,17 +631,17 @@
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- Vendor JS Files -->
-  <script src="vendor/das_vendor/bootstrap/js/bootstrap.bundle.js"></script>
-  <script src="vendor/das_vendor/php-email-form/validate.js"></script>
-  <script src="vendor/das_vendor/quill/quill.min.js"></script>
-  <script src="vendor/das_vendor/tinymce/tinymce.min.js"></script>
-  <script src="vendor/das_vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="vendor/das_vendor/chart.js/chart.min.js"></script>
-  <script src="vendor/das_vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="vendor/das_vendor/echarts/echarts.min.js"></script>
+  <script src="../static/css/das_vendor/bootstrap/js/bootstrap.bundle.js"></script>
+  <script src="../static/css/das_vendor/php-email-form/validate.js"></script>
+  <script src="../static/css/das_vendor/quill/quill.min.js"></script>
+  <script src="../static/css/das_vendor/tinymce/tinymce.min.js"></script>
+  <script src="../static/css/das_vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="../static/css/das_vendor/chart.js/chart.min.js"></script>
+  <script src="../static/css/das_vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="../static/css/das_vendor/echarts/echarts.min.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="./js/das_main.js"></script>
+  <script src="../static/js/das_main.js"></script>
 
 </body>
 

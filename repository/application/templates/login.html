@@ -4,11 +4,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/re_lo.css">
-    <link rel="shortcut icon" href="./img/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../static/css/re_lo.css">
+    <link rel="shortcut icon" href="../static/img/logo.png" type="image/x-icon">
     <title>Career Spring - login</title>
 </head>
 <body>
+    <div id = "google_element"></div>
+  <script src = "http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate">
+    
+  </script>
+
+  <script>
+    function loadGoogleTranslate(){
+      new google.translate.TranslateElement(
+        "google_element"
+      )
+    }
+  </script>
     <div class="container">
         <div class="left">
             
@@ -17,7 +29,7 @@
         </div>
         <div class="right">
            <div class="text">
-            <img src="./img/logo.png" alt="logo" height="100">
+            <img src="../static/img/logo.png" alt="logo" height="100">
          
             <h1>WELLCOME TO CAREER VISION</h1>
             <h2>Find Your Dream Career</h2>
@@ -27,11 +39,13 @@
                 <a href=""><img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/circle-facebook_-512.png" alt="facebook" width="30" height="30"></a>
                <a href=""> <img src="https://cdn.iconscout.com/icon/free/png-128/github-163-761603.png" alt="github" width="30" height="30"></a>
             </div>
-            <form action="">
+            <form action="{{url_for('user_dashboard')}}">
                 <input type="text" placeholder="Username"><br>
                 <input type="password" placeholder="Passwword"><br>
-                <button> <a href="Dashboard-index.html" style="color: white; text-decoration:none;">LOGIN</a></button>
-                <h3>New User ? Create New Account <a href="register.html">Sign Up</a> </h3>
+                <!-- <button> <a href="../template/Dashboard-index.html" style="color: white; text-decoration:none;">LOGIN</a></button> -->
+                <button> <a href="http://127.0.0.1:5000/dashboard" style="color: white; text-decoration:none;">LOGIN</a></button>
+                <!-- <h3>New User ? Create New Account <a href="../template/register.html">Sign Up</a> </h3> -->
+                <h3>New User ? Create New Account <a href="http://127.0.0.1:5000/register">Sign Up</a> </h3>
                 
             </form>
 
